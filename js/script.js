@@ -49,15 +49,18 @@ createApp({
                     image: './img/01.webp',
                     title: 'Marvel\'s Spiderman Miles Morale',
                     text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
-                }, {
+                }, 
+                {
                     image: './img/02.webp',
                     title: 'Ratchet & Clank: Rift Apart',
                     text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
-                }, {
+                }, 
+                {
                     image: './img/03.webp',
                     title: 'Fortnite',
                     text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
-                }, {
+                }, 
+                {
                     image: './img/04.webp',
                     title: 'Stray',
                     text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
@@ -72,21 +75,27 @@ createApp({
     },
 
     methods: {
-        prevImage() {
-            console.log('cliccato il bottone');
-            this.activeImage--;
-            console.log(activeImage);
-
+        prevImage () {
+            console.log('hai cliccato prev');
+            this.activeImage--
+            console.log(this.activeImage);
+            if (this.activeImage < 0) {
+                this.activeImage = this.games.length - 1
+                
+            }
         },
-
-        nextImage() {
-            console.log(nextImage);
+        nextImage () {
+            console.log('hai cliccato next');
             this.activeImage++
+            console.log(this.activeImage);
+            if (this.activeImage > this.games.length - 1) {
+                this.activeImage = 0;
+                
+            }
         }
-
-
-
+        
     },
+
 
     mounted() {
         console.log(this.games);
